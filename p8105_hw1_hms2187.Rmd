@@ -49,9 +49,14 @@ as.numeric(pull(hw1_df, vec_factor))
 
 Using the as.numeric function, R tries to convert all of the variables into numeric form. So, the logical variable was converted from true/false into 0 or 1. The character variable had NAs introduced by coercion. The factor variable changed its levels from high, medium, low, to 1, 2, and 3. This does explain what happens when we try to take the mean (it shows why mean is NA for these variables).
 
-Now adding additional conversions **left off here**:
+Now adding additional conversions **problem with second bullet point**:
 ```{r conversion2}
-hw1_df$vec_logic = as.numeric(hw1_df$vec_logic)
+as.numeric(pull(hw1_df, vec_logic)) * pull(hw1_df, vec_rand)
+
+as.factor(pull(hw1_df, vec_logic)) * pull(hw1_df, vec_rand)
+
+vec_logic2 = as.factor(pull(hw1_df, vec_logic))
+as.numeric(vec_logic2)*(pull(hw1_df, vec_logic))
 ```
 
 ## Problem 2
